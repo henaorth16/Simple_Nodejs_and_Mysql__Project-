@@ -1,5 +1,6 @@
 # Simple_Nodejs_and_Mysql__Project
-The Customer Complaint Management System or **MINT** ( Ministry of Innovation and Technology) had a doupt about the customer satisfaction. that's why this project was delivered.
+The Customer Complaint Management System.
+**MINT** ( Ministry of Innovation and Technology) had a doupt about the customer satisfaction. that's why this project was delivered.
 #### security won't be an issue.
 ---
 
