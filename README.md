@@ -8,7 +8,7 @@ if you have any recommendation or suggestion please let me know, feel free to fo
 
 ---
 ## to run this project in your machine read the following advice
----
+
 1. create .env file and declare
     `DB_HOST=localhost
     DB_USER=root
