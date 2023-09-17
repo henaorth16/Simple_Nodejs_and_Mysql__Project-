@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <main>
+    <div class="image">
+      <img src="asset/logo.png" alt="">
+    </div>
+
+
+
+  
+  <form action="/submit" method="post" enctype="multipart/form-data">
+    <div class="form">
+      <input name="firstName" type="text" placeholder="Name">
+      <input name="email" type="email" placeholder="E-mail optional" id="email">
+  </div>
+  <div class="select-option">
+    <select name="department" id="dept">
+      <!-- <option value="" disabled selected hidden>Please choose department</option> -->
+      <option value="legal service office">legal service office</option>
+      <option value="audit service office">audit service office</option>
+      <option value="international translation office">international translation office</option>
+      <option value="ethics and anti corruption office">ethics and anti corruption office</option>
+      <option value="public relation and communication office">public relation and communication office</option>
+      <option value="woman and social affairs office">woman and social affairs office</option>
+    </select>
+    <label for="file" ></label>
+    <input type="file" name="attachment" id="file" >
+    <textarea name="message" cols="30" rows="10" placeholder="put your comment here"></textarea>
+    <input type="submit" value="Submit">
+  </div>
+    
+  </form>
+</main>
+  
+</body>
+</html>
