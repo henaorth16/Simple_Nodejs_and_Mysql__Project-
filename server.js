@@ -60,8 +60,7 @@ app.post('/submit',upload.single('attachment'), (req, res) => {
     var currentDate = `${yyyy}-${mm}-${dd}`;
     
     const { firstName, email, department, message } = req.body;
-    const attachment = req.file; // Uploaded file information
-console.log(req.file);
+    const attachment = req.file; 
     // Insert data into the database
     const sql = `INSERT INTO complains (firstName, email,department,attachment, message, dateOfAdded) VALUES (?,?,?,?,?,'${currentDate}');`;
     db.query(sql, [firstName, email, department,attachment ? attachment.filename : null, message], (err, result) => {
@@ -70,10 +69,12 @@ console.log(req.file);
             res.send('Error submitting data.');
         } else {
             // console.log('Data inserted:', result);
-            res.send('Data submitted successfully.');
+            res.redirect('/');
         }
     });
 });
+
+
 
 app.get('/admin', (req, res) => {
     
@@ -83,19 +84,20 @@ app.get('/admin', (req, res) => {
             console.error('Error fetching data:', err);
             res.send('Error fetching data.');
         } else {
-            res.render('admin.ejs', { data: results });
+            res.render('admin.ejs', { data: results});
         }
     });
 });
 
 
 app.get('/corr', (req, res) => {
-    const sql = 'SELECT * FROM complains'; // Replace with your table name
+    const sql = `SELECT * FROM complains WHERE department like "%orruption %offi%"`; // Replace with your table name
     db.query(sql, (err, results) => {
         if (err) {
             console.error('Error fetching data:', err);
             res.send('Error fetching data.');
         } else {
+            
             res.render('corr.ejs', { data: results });
         }
     });

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-</head>
+    <link rel="stylesheet" href="styles/adminStyle.css">
 <body>
-    <h1>Admin Page</h1>
+    <div class="dialogue"></div>
+    <h1>Anti Corruption Admin Page</h1>
     <table border="1">
         <thead>
             <tr>
-                <th>Num</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Department</th>
@@ -18,22 +22,25 @@
             </tr>
         </thead>
         <tbody>
-            <% for (let i = 0; i < data.length; i++) { %>
+            <% for (let i = 0; i < data.length; i++) {%>
                 <tr>
                     <td><%= data[i].id %></td>
                     <td><%= data[i].firstName %></td>
                     <td><%= data[i].email %></td>
                     <td><%= data[i].department %></td>
-                    <td><%= data[i].message %></td>
-                    <td><%= data[i].attachment %></td>
-                    <td><%= 
-                        new Date(data[i].dateOfAdded).toLocaleString()
-                        
-                        %></td>
-                    
-                </tr>
+                    <td id="message"><%= data[i].message %></td>
+                    <td>
+                        <% if (data[i].attachment) { %>
+                            <a href="../uploads/<%= data[i].attachment %>">Download Attachment</a>
+                        <% } else { %>
+                            No Attachment
+                        <% } %>
+                    </td>
+                    <td><%= new Date(data[i].dateOfAdded).toLocaleString().slice(0, 10) %></td>></tr>
             <% } %>
         </tbody>
     </table>
+
+    <script src="styles/admin.js"></script>
 </body>
 </html>

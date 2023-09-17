@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <h1 class="header">CUSTOMER <span>COMPLIANT</span>  FORM</h1>
+
   <main>
     <div class="image">
       <img src="asset/logo.png" alt="">
@@ -23,7 +25,7 @@
   </div>
   <div class="select-option">
     <select name="department" id="dept">
-      <!-- <option value="" disabled selected hidden>Please choose department</option> -->
+      <option value="" disabled selected hidden>Please choose department</option>
       <option value="legal service office">legal service office</option>
       <option value="audit service office">audit service office</option>
       <option value="international translation office">international translation office</option>
@@ -31,9 +33,12 @@
       <option value="public relation and communication office">public relation and communication office</option>
       <option value="woman and social affairs office">woman and social affairs office</option>
     </select>
-    <label for="file" ></label>
-    <input type="file" name="attachment" id="file" >
-    <textarea name="message" cols="30" rows="10" placeholder="put your comment here"></textarea>
+    <div class="file">
+      <label  for="file" ><img class="attach" src="asset/attach.png" alt="attach"><span> Attachment</span></label>
+    <input class="file-input" type="file" name="attachment" id="file" >
+    </div>
+    
+    <textarea name="message" cols="30" rows="10" placeholder="put your comment here" required></textarea>
     <input type="submit" value="Submit">
   </div>
     
