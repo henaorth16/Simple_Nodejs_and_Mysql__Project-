@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
-const mysql = require("mysql2")
+require('dotenv').config();
+const mysql = require("mysql2");
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -9,15 +10,14 @@ const cors = require('cors')
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
-
 const db = mysql.createConnection({
-    host:"localhost",
-    user: "root",
-    database:"customer_complain",
-    password:"Henilove@1616",
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    database:process.env.DB_NAME,
+    password:process.env.DB_PASSWORD,
+})
 
-});
+
 
 db.connect((err) => {
     if (err) {
@@ -102,7 +102,7 @@ app.get('/corr', (req, res) => {
 });
 
 
-const port = 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
