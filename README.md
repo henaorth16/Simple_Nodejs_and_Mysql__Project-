@@ -16,4 +16,4 @@ if you have any recommendation or suggestion please let me know, feel free to fo
     DB_PASSWORD=your-password`
  and don't forget the port-> `PORT=3000` or any
 2. install node-module `npm i` *enter*
-3. the run `npm run dev`
+3. Finally to run on localhost 3000 `npm run dev` press enter 😆
