@@ -4,7 +4,7 @@ The Customer Complaint Management System.
 #### security won't be an issue.
 ---
 
-if you have any recommendation or suggestion please let me know, feel free to fork :smile
+if you have any recommendation or suggestion please let me know, feel free to fork 😄
 
 ---
 ## to run this project in your machine read the following advice
